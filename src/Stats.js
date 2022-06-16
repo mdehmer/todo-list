@@ -7,8 +7,8 @@ export function Stats({ listData }) {
     (countComplete.length / listData.length) * 100
   );
   return (
-    <div>
-      {countComplete.length} completed out of {listData.length} (
+    <div className="Stats-body">
+      {countComplete.length} av {listData.length} avklarade (
       {!completionRate ? "0" : completionRate}%)
     </div>
   );

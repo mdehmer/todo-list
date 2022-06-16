@@ -5,7 +5,7 @@ import { ToDoForm } from "./ToDoForm";
 import { Stats } from "./Stats";
 
 export const List = () => {
-    const [listData, setList] = useState([]);
+  const [listData, setList] = useState([]);
 
   const handleToggle = (id) => {
     let mapped = listData.map((item) => {
@@ -37,19 +37,25 @@ export const List = () => {
   };
 
   return (
-      <div>
-       <Stats listData={listData}/>
-      {listData.map((item) => {
-          return (
-              <ToDo
-              todo={item}
-              handleToggle={handleToggle}
-              handleFilter={handleFilter}
-              />
-              );
-            })}
-      <button onClick={handleFilter}>Clear Completed</button>
+    <div className="List-body">
+      <Stats listData={listData} />
       <ToDoForm addTask={addTask} />
+      {listData.map((item) => {
+        return (
+          <ToDo
+            todo={item}
+            handleToggle={handleToggle}
+            handleFilter={handleFilter}
+          />
+        );
+      })}
+      <button
+        onClick={handleFilter}
+        type="button"
+        className="btn btn-outline-dark"
+      >
+        Rensa avklarade
+      </button>
     </div>
   );
 };

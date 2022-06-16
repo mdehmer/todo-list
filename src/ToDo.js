@@ -1,20 +1,21 @@
-// import { toBeDisabled } from "@testing-library/jest-dom/dist/matchers";
 import React from "react";
 
-// export function ToDo() {
-
-// }
-
 const ToDo = ({ todo, handleToggle }) => {
-  //   return <div className="strike">{todo.task}</div>;
   return (
-    <div className={todo.complete ? "strike" : ""}>
+    <div>
       <input
         checked={todo.complete}
         type="checkbox"
+        className="form-check-input"
         onClick={() => handleToggle(todo.id)}
       />
-      {todo.task}
+      <label
+        className={`to-do-item form-check-label ${
+          todo.complete ? "strike" : ""
+        } `}
+      >
+        {todo.task}
+      </label>
     </div>
   );
 };
