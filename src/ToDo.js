@@ -4,9 +4,9 @@ import React from "react";
 
 // }
 
-export const ToDo = ({ todo }) => {
+export const ToDo = ({ todo, handleToggle }) => {
   //   return <div className="strike">{todo.task}</div>;
-  return <div className={todo.complete ? "strike" : ""}>{todo.task}</div>;
+  return <div onClick = {() => handleToggle(todo.id)} className={todo.complete ? "strike" : ""}>{todo.task}</div>;
 };
 
 export default ToDo;

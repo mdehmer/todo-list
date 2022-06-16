@@ -1,23 +1,30 @@
 import ToDo from "./ToDo.js";
-import React from 'react';
+import React, { useState } from "react";
+import data from "./data.json";
 
-// export function List() {
-//   return (
-//     <form>
-//       <ul> </ul>
-//       <input type="checkbox"></input>
-//     </form>
-//   );
-// }
+export const List = () => {
+    const [listData, setList] = useState(data);
 
-export const List = ({content}) => {
-  return (
+    const handleToggle = (id) => {
+      console.log(id)
+        let mapped = listData.map((task) => {
+        return task.id === id ? { ...task, complete: !task.complete } : { ...task };
+      });
+      setList(mapped);
+    };
+    return (
       <div>
-          {content.map(todo => {
+          {listData.map(item => {
               return (
-                  <ToDo todo={todo} />
+                  <ToDo todo={item} handleToggle = {handleToggle}/>
               )
           })}
       </div>
   );
 };
+
+if (task.id === id) {
+    { ...task, complete: !task.complete }
+} else {
+    { ...task }
+}
