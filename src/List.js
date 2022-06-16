@@ -8,7 +8,6 @@ export const List = () => {
     const [listData, setList] = useState([]);
 
   const handleToggle = (id) => {
-    // console.log(id);
     let mapped = listData.map((item) => {
       return item.id === id
         ? { ...item, complete: !item.complete }
@@ -35,7 +34,6 @@ export const List = () => {
       },
     ];
     setList(copy);
-    // setListCounter(+ 1);
   };
 
   return (
