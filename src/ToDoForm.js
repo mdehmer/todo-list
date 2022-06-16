@@ -8,7 +8,6 @@ export function ToDoForm({ addTask }) {
   };
 
   const handleSubmit = (e) => {
-    console.log("Submittad");
     e.preventDefault();
     addTask(userInput);
     setUserInput("");
@@ -16,19 +15,18 @@ export function ToDoForm({ addTask }) {
 
   return (
     <form className="row  g-3 align-items-center" onSubmit={handleSubmit}>
-      <div class="form-floating mb-3">
+      <div className="input-group mb-3">
         <input
           value={userInput}
           type="text"
+          className="form-control"
           onChange={handleChange}
           placeholder="Jag behöver..."
-          className="form-control form-control-lg"
+          aria-label="Jag behöver..."
+          aria-describedby="button-addon2"
           id="floatingInput"
         />
-        <label for="floatingInput">Jag behöver...</label>
-        <button type="button" className="btn btn-primary">
-          Lägg till
-        </button>
+        <input value="+" className="btn btn-dark" type="submit" id="button-addon2" />
       </div>
     </form>
   );

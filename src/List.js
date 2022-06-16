@@ -38,21 +38,25 @@ export const List = () => {
 
   return (
     <div className="List-body">
-      <Stats listData={listData} />
       <ToDoForm addTask={addTask} />
-      {listData.map((item) => {
-        return (
-          <ToDo
-            todo={item}
-            handleToggle={handleToggle}
-            handleFilter={handleFilter}
-          />
-        );
-      })}
+      <Stats listData={listData} />
+      <ul className="list-group">
+        {listData.map((item) => {
+          return (
+            <li class="list-group-item">
+              <ToDo
+                todo={item}
+                handleToggle={handleToggle}
+                handleFilter={handleFilter}
+              />
+            </li>
+          );
+        })}
+      </ul>
       <button
         onClick={handleFilter}
         type="button"
-        className="btn btn-outline-dark"
+        className="btn btn-outline-secondary"
       >
         Rensa avklarade
       </button>

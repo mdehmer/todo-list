@@ -11,7 +11,7 @@ const ToDo = ({ todo, handleToggle }) => {
       />
       <label
         className={`to-do-item form-check-label ${
-          todo.complete ? "strike" : ""
+          todo.complete ? "To-do-complete" : ""
         } `}
       >
         {todo.task}
