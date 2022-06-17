@@ -1,3 +1,5 @@
+import Confetti from "react-confetti";
+
 export function Stats({ listData }) {
   let countComplete = listData.filter((item) => {
     return item.complete;
@@ -23,6 +25,9 @@ export function Stats({ listData }) {
         >
           {countComplete.length} av {listData.length} avklarade (
           {completionRate}%)
+          {completionRate === 100 ? (
+            <Confetti className="confettiSize" />
+          ) : null}
         </div>
       </div>
     </div>

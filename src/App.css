@@ -51,6 +51,11 @@
   color: #61dafb;
 }
 
+.confettiSize {
+  width: 100vh;
+  height: 100vh;
+}
+
 .To-do-complete {
   text-decoration: line-through;
   color: silver;
